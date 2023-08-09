@@ -1,18 +1,31 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-xiaomi-permissions';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import {
+  openDisplayOverlaySettings,
+  getPermissionsForDisplayOverlay,
+} from 'react-native-xiaomi-permissions';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [hasPermissions, setHasPermissions] = useState<boolean | undefined>();
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+  useEffect(() => {
+    getPermissionsForDisplayOverlay().then(setHasPermissions);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Has Xiaomi overlay Permissions: </Text>
+      <Text>
+        {hasPermissions === undefined
+          ? 'Loading...'
+          : hasPermissions
+          ? 'Yes'
+          : 'No'}
+      </Text>
+      <TouchableOpacity onPress={openDisplayOverlaySettings} style={styles.button}>
+        <Text>Open Xiaomi display overlay settings</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -23,9 +36,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  button: {
+    padding: 12,
+    borderRadius: 4,
+    backgroundColor: 'green',
   },
 });

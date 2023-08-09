@@ -17,6 +17,10 @@ const XiaomiPermissions = NativeModules.XiaomiPermissions
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return XiaomiPermissions.multiply(a, b);
+export function getPermissionsForDisplayOverlay(): Promise<boolean> {
+  return XiaomiPermissions.isMiuiCanDisplayOverlay();
+}
+
+export function openDisplayOverlaySettings(): Promise<boolean> {
+  return XiaomiPermissions.openMiuiDisplayOverlayPermission();
 }
