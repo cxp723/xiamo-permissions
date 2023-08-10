@@ -18,6 +18,10 @@ const XiaomiPermissions = NativeModules.XiaomiPermissions
     );
 
 export function getPermissionsForDisplayOverlay(): Promise<boolean> {
+  if (Platform.OS === 'ios') {
+    return Promise.resolve(true);
+  }
+
   return XiaomiPermissions.isMiuiCanDisplayOverlay();
 }
 
