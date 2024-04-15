@@ -375,7 +375,7 @@ PODS:
   - React-jsinspector (0.72.3)
   - React-logger (0.72.3):
     - glog
-  - react-native-xiaomi-permissions (0.1.0):
+  - react-native-xiaomi-permissions (0.1.2):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - React-NativeModulesApple (0.72.3):
@@ -693,7 +693,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 59d1eb03af7d30b7d66589c410f13151271e8006
   React-jsinspector: b511447170f561157547bc0bef3f169663860be7
   React-logger: c5b527272d5f22eaa09bb3c3a690fee8f237ae95
-  react-native-xiaomi-permissions: 1597e309c495b5d31f4c3238617e1ec84c47ceb7
+  react-native-xiaomi-permissions: d94deb09fb07db6244c84d1eeb1679c936bc2f73
   React-NativeModulesApple: c57f3efe0df288a6532b726ad2d0322a9bf38472
   React-perflogger: 6bd153e776e6beed54c56b0847e1220a3ff92ba5
   React-RCTActionSheet: c0b62af44e610e69d9a2049a682f5dba4e9dff17
@@ -717,4 +717,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a9bbdcf508a3701260700f5a56c33b61f56c2d1a
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.15.2
